@@ -13,8 +13,11 @@ const app = express()
 const server = createServer(app)
 const io = new Server(server, {
   cors: {
-    origin: '*'
-  }
+    origin: ["http://localhost:4123", "https://snap-link.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true
+  },
+  allowEIO3: true
 })
 
 const {WEBHOOK_SECRET} = process.env
