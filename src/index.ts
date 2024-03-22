@@ -26,7 +26,7 @@ if (!WEBHOOK_SECRET) {
 app.post('/webhook', (req, res) => {
   const password = req.get('x-webhook-secret')
   if (password !== WEBHOOK_SECRET) {
-    res.send('Password incorrect', {status: 403})
+    res.send('Password incorrect')
     return
   }
   io.emit('link', 'The links have been updated');
