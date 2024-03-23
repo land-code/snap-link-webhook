@@ -15,7 +15,6 @@ const io = new Server(server, {
   cors: {
     origin: ["http://localhost:4321", "https://snap-link.vercel.app"],
     methods: ["GET", "POST"],
-    credentials: true
   },
   allowEIO3: true
 })
